@@ -4,6 +4,9 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    env: 
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
       - name: checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
@@ -13,14 +16,17 @@ jobs:
           terraform_version: "1.1.7"
       - name: terraform init
         run: terraform init
+      - name: teraform plan
+        run: terraform plan
 
 
-  terraform-ubuntu-22:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
-      - name: terraform init
-        run: terraform init
+
+  # terraform-ubuntu-22:
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - name: checkout
+  #       uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
+  #     - name: terraform init
+  #       run: terraform init
 
     
