@@ -7,8 +7,13 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
+      - name: set up terraform
+        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd
+        with:
+          terraform_version: "1.1.7"
       - name: terraform init
         run: terraform init
+
 
   terraform-ubuntu-22:
     runs-on: ubuntu-22.04
