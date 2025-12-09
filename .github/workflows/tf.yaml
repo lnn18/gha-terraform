@@ -18,6 +18,8 @@ jobs:
         run: terraform init
       - name: teraform plan
         run: terraform plan
+      - name: terraform apply
+        run: terraform apply -auto-approve
 
 
 

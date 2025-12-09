@@ -13,4 +13,9 @@ provider "aws" {
 
 resource "aws_s3_bucket" "fer-gha-tf-bucket" {
   bucket = "244190102671-lina-figueredo"
+
+    tags = {
+        Owner = "lina-figueredo"
+        bootcamp = "devops"
+    }
 }
