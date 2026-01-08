@@ -21,8 +21,8 @@ jobs:
         uses: bridgecrewio/checkov-action@99bb2caf247dfd9f03cf984373bc6043d4e32ebf
         with:
           # This will add both a CLI output to the console and create a results.sarif file
-          output_format: cli,sarif
-          output_file_path: console,results.sarif
+          output_format: sarif
+          output_file_path: results.sarif
         
       - name: Upload SARIF file
       # @v4.31.9
