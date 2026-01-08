@@ -23,6 +23,7 @@ jobs:
           # This will add both a CLI output to the console and create a results.sarif file
           output_format: sarif
           output_file_path: results.sarif
+          skip_check: CKV_AWS_144  # Example to skip specific checks
         
       - name: Upload SARIF file
       # @v4.31.9

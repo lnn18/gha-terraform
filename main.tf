@@ -25,3 +25,10 @@ resource "aws_s3_bucket" "fer-gha-tf-bucket" {
         bootcamp = "devops"
     }
 }
+
+resource "aws_s3_bucket_public_access_block" "fer-gha-tf-bucket" {
+  bucket = aws_s3_bucket.fer-gha-tf-bucket.id
+
+  block_public_acls   = true
+  block_public_policy = true
+}
