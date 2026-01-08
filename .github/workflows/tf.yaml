@@ -19,7 +19,7 @@ jobs:
           uses: aquasecurity/tfsec-action@v1.0.0
           with:
             format: sarif
-            out: results.sarif
+            additional-args: --out results.sarif
             soft_fail: true
         
         - run: ls -la
